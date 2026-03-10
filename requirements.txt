@@ -4,3 +4,4 @@ py-tgcalls                 # Aktif fork, wheels var Python 3.10-3.12 için
 yt-dlp
 python-dotenv
 lyricsgenius
+ffmpeg-python
