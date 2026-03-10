@@ -1,7 +1,6 @@
-pyrogram==2.0.106          # En stabil son versiyon (pytgcalls ile uyumlu)
-tgcrypto                   # Hız için zorunlu
-py-tgcalls                 # Aktif fork, wheels var Python 3.10-3.12 için
+pyrogram==2.0.106
+tgcrypto
+py-tgcalls
 yt-dlp
 python-dotenv
 lyricsgenius
-ffmpeg-python
