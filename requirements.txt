@@ -1,5 +1,6 @@
 pyrogram
 tgcrypto
-pytgcalls
+pytgcalls[pyrogram]
 yt-dlp
-ffmpeg-python
+python-dotenv
+lyricsgenius
