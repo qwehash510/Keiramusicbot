@@ -27,6 +27,18 @@ genius_token = os.getenv("GENIUS_API")  # Genius boş kalsa da olur, lyrics komu
 app = Client("keira", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 pytg = PyTgCalls(app)
 
+# queues = {} buradan devam et
+queues = {}  # chat_id: [(title, url, thumb), ...]
+# ... diğer kodun
+
+api_id = int(os.getenv("API_ID"))
+api_hash = os.getenv("API_HASH")
+bot_token = os.getenv("BOT_TOKEN")
+genius_token = os.getenv("GENIUS_API")  # Genius boş kalsa da olur, lyrics komutunda guard var
+
+app = Client("keira", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+pytg = PyTgCalls(app)
+
 # ... geri kalan kodun (queues, fancy, komutlar vs.)
 
 queues = {}      # chat_id: [(title, url, thumbnail), ...]
