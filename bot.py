@@ -1,8 +1,17 @@
 import os
 import asyncio
+
+# Python 3.14+ asyncio loop fix (Pyrogram sync patlamasın)
+try:
+    asyncio.get_event_loop()
+except RuntimeError as e:
+    if "There is no current event loop" in str(e):
+        asyncio.set_event_loop(asyncio.new_event_loop())
+
+# Bütün import'lar buradan başlasın
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from py_tgcalls import PyTgCalls, StreamType   # pytgcalls yerine py_tgcalls
+from py_tgcalls import PyTgCalls, StreamType
 from py_tgcalls.types.input_stream import AudioPiped
 from yt_dlp import YoutubeDL
 from lyricsgenius import Genius
@@ -13,10 +22,12 @@ load_dotenv()
 api_id = int(os.getenv("API_ID"))
 api_hash = os.getenv("API_HASH")
 bot_token = os.getenv("BOT_TOKEN")
-genius_token = os.getenv("GENIUS_API")
+genius_token = os.getenv("GENIUS_API")  # Genius boş kalsa da olur, lyrics komutunda guard var
 
 app = Client("keira", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 pytg = PyTgCalls(app)
+
+# ... geri kalan kodun (queues, fancy, komutlar vs.)
 
 queues = {}      # chat_id: [(title, url, thumbnail), ...]
 now_playing = {} # chat_id: title
