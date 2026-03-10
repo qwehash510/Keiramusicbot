@@ -2,8 +2,8 @@ import os
 import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pytgcalls import PyTgCalls, StreamType
-from pytgcalls.types.input_stream import AudioPiped
+from py_tgcalls import PyTgCalls, StreamType   # pytgcalls yerine py_tgcalls
+from py_tgcalls.types.input_stream import AudioPiped
 from yt_dlp import YoutubeDL
 from lyricsgenius import Genius
 from dotenv import load_dotenv
